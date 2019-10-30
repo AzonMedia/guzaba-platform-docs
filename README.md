@@ -5,4 +5,4 @@
 ## Basic Topics
 
 - [Routing](./Routing)
-- [Command Line Arguments](./cli-args/README.md)
+- [Command Line Arguments](./cli-args)
