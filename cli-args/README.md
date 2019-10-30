@@ -30,8 +30,11 @@ Options are not ordered (meaning you can specify them in any order) and are spec
 
   Example: --cors-origin=192.168.0.52
   
-
 To add more options edit [Start.php](https://github.com/AzonMedia/guzaba-platform/blob/master/app/bin/Start.php)
+
+All options are added in the output property **options** and then passed to [RegistryBackendCli](https://github.com/AzonMedia/registry/blob/master/src/RegistryBackendCli.php) which is the first backend for **GuzabaPlatform** and will overwrite its `CONFIG_DEFAULTS` constant.
+
+**The same structure as [GuzabaPlatform](https://github.com/AzonMedia/guzaba-platform/blob/master/app/src/GuzabaPlatform/Platform/Application/GuzabaPlatform.php) CONFIG_DEFAULTS must be used.**
 
 ## Usage
 
