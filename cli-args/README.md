@@ -32,7 +32,7 @@ Options are not ordered (meaning you can specify them in any order) and are spec
   
 * **log-level**  - set the log level for the PSR3- Logger. The possible values are: debug, info, notice, warning, error, critical, alert, emergency. The deault level is **debug**.
   
-  Example: --log-levle=warning
+  Example: --log-level=warning
   
 To add more options edit [Start.php](https://github.com/AzonMedia/guzaba-platform/blob/master/app/bin/Start.php)
 
