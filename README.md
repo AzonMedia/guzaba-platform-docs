@@ -1,6 +1,9 @@
 # GuzabaPlatform Documentation
 
-## Overview
+## Introduction
+
+[GuzabaPlatform](https://github.com/AzonMedia/guzaba-platform) is a plugin based system for building applications ranging from presentational websites to corporate applications.
+It is based on the [Guzaba 2 Framework](https://github.com/AzonMedia/guzaba2).
 
 ## Deployment in containers
 
@@ -89,7 +92,7 @@ Usually the only one needed to be installed is GuzabaPlatform with `composer req
 - [guzaba-platform/guzaba-platform](https://packagist.org/packages/guzaba-platform/guzaba-platform) - the [GuzabaPlatform](https://github.com/AzonMedia/guzaba-platform) itself
 - [guzaba-platform/guzaba-platform-installer](https://packagist.org/packages/guzaba-platform/guzaba-platform-installer) - the [installer of GuzbaPlatform](https://github.com/AzonMedia/guzaba-platform-installer). It is always installed with GuzabaPlatform. It has its package type set to "composer-plugin"
 - [guzaba-platform/guzaba-platform-docs](https://packagist.org/packages/guzaba-platform/guzaba-platform-docs) - [GuzabaPlatform documentation](https://github.com/AzonMedia/guzaba-platform-docs)
-- [guzaba/guzaba2](https://packagist.org/packages/guzaba/guzaba2) - the [Guzaba2 Framework](https://github.com/AzonMedia/guzaba2) that powers GuzabaPlatform
+- [guzaba/guzaba2](https://packagist.org/packages/guzaba/guzaba2) - the [Guzaba 2 Framework](https://github.com/AzonMedia/guzaba2) that powers GuzabaPlatform
 
 #### List of available components
 
