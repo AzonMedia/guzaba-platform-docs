@@ -107,7 +107,7 @@ You can use the given names with the `composer require` command.
 
 #### List of modules
 
-Additiional packages that are used by GuzabaPlatform but are not GuzabaPlatform components.
+Additional packages that are used by GuzabaPlatform but are not GuzabaPlatform components.
 These packages have their package type set to "library" repository name starting with "module".
 These still can be installed individually with `composer require` but usually these will be installed as part of the components listed above.
 - [guzaba-platform/cart-base](https://packagist.org/packages/guzaba-platform/cart-base) - [Shopping cart module](https://github.com/AzonMedia/module-cart-base) - contains interfaces
