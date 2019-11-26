@@ -98,7 +98,10 @@ Usually the only one needed to be installed is GuzabaPlatform with `composer req
 
 The following GuzabaPlatform components are available as packages through [Packagist](https://packagist.org/).
 The GuzabaPlatform components have their package type set to "guzaba-platform-component" in composer.json and have their GitHub repository name starting with "component".
-You can use the given names with the `composer require` command. 
+You can use the given names with the `composer require` command.
+- [guzaba-platform/request-caching](https://packagist.org/packages/guzaba-platform/request-caching) - [Request caching component](https://github.com/AzonMedia/component-request-caching) (injects a new middleware)
+
+#### List of the components in development 
 - [guzaba-platform/payments-integrations](https://packagist.org/packages/guzaba-platform/payments-integrations) - [Payments integrations component](https://github.com/AzonMedia/component-payments-integrations)
 - [guzaba-platform/payments-integration-epaybg](https://packagist.org/packages/guzaba-platform/payments-integration-epaybg) - [Payments integration with Epay.bg component](https://github.com/AzonMedia/component-payments-integration-epaybg)
 - [guzaba-platform/tags](https://packagist.org/packages/guzaba-platform/tags) - [Tags component](https://github.com/AzonMedia/component-tags)
