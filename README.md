@@ -134,3 +134,4 @@ These still can be installed individually with `composer require` but usually th
 - [Routing](./Routing)
 - [Command Line Arguments](./cli-args)
 - [Development](./Development)
+- [Components](./Components)
