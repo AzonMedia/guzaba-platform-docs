@@ -79,7 +79,13 @@ $ cp app/registry/local.php.dist app/registry/local.php
 $ app/public_src/build_prod
 ```
 
-Change the settings in your ```app/registry/local.php``` so you can connect to the MySQL and to the Redis server. 
+Change the settings in your ```app/registry/local.php``` so you can connect to the MySQL and to the Redis server.
+
+## Current development status
+- the permissions are working but currently not configured or enforced
+- login needs improvements & additional security
+- registration needs improvements
+- the Components interface in the admin is not completed
 
 ## Packages
 
@@ -99,18 +105,25 @@ Usually the only one needed to be installed is GuzabaPlatform with `composer req
 
 #### List of available components
 
-The following GuzabaPlatform components are available as packages through [Packagist](https://packagist.org/).
+The following GuzabaPlatform components are available as packages through [Packagist](https://packagist.org/) and can be installed with `composer require {module_name}`.
+Currently these modules are functional but are lacking design.
 The GuzabaPlatform components have their package type set to "guzaba-platform-component" in composer.json and have their GitHub repository name starting with "component".
-You can use the given names with the `composer require` command.
+- [guzaba-platform/assets](https://packagist.org/packages/guzaba-platform/assets) - [Digital assets management component](https://github.com/AzonMedia/component-assets)
+- [guzaba-platform/crud](https://packagist.org/packages/guzaba-platform/crud) - [CRUD operations and ACL permissions management](https://github.com/AzonMedia/component-crud)
 - [guzaba-platform/request-caching](https://packagist.org/packages/guzaba-platform/request-caching) - [Request caching component](https://github.com/AzonMedia/component-request-caching) (injects a new middleware)
+- [guzaba-platform/classes](https://packagist.org/packages/guzaba-platform/classes) - [Provides class ACL permissions management](https://github.com/AzonMedia/component-classes)
+- [guzaba-platform/controllers](https://packagist.org/packages/guzaba-platform/controllers) - [Provides controllers ACL permissions management](https://github.com/AzonMedia/component-controllers)
 
 #### List of the components in development 
-You can use the given names with the `composer require` command. 
-- [guzaba-platform/assets](https://packagist.org/packages/guzaba-platform/assets) - [Digital assets management component](https://github.com/AzonMedia/component-assets)
+The following modules can be installed with `composer require {module_name}`.
 - [guzaba-platform/cart](https://packagist.org/packages/guzaba-platform/cart) - [Shopping cart component](https://github.com/AzonMedia/component-cart)
 - [guzaba-platform/catalog](https://packagist.org/packages/guzaba-platform/catalog) - [Catalog component](https://github.com/AzonMedia/component-catalog) (can be used as products catalog/store front)
 - [guzaba-platform/cms](https://packagist.org/packages/guzaba-platform/cms) - [CMS component](https://github.com/AzonMedia/component-cms)
-- [guzaba-platform/crud](https://packagist.org/packages/guzaba-platform/crud) - [CRUD component](https://github.com/AzonMedia/component-crud)
+- [guzaba-platform/facebook-login]
+- [guzaba-platform/github-login]
+- [guzaba-platform/google-login]
+- [guzaba-platform/navigation] - Managing navigation
+- [guzaba-platform/twitter-login]
 - [guzaba-platform/payments-integrations](https://packagist.org/packages/guzaba-platform/payments-integrations) - [Payments integrations component](https://github.com/AzonMedia/component-payments-integrations)
 - [guzaba-platform/payments-integration-epaybg](https://packagist.org/packages/guzaba-platform/payments-integration-epaybg) - [Payments integration with Epay.bg component](https://github.com/AzonMedia/component-payments-integration-epaybg)
 - [guzaba-platform/roles](https://packagist.org/packages/guzaba-platform/roles) - [Roles management component](https://github.com/AzonMedia/component-roles)
