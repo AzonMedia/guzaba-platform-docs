@@ -45,8 +45,9 @@ If the above command produces an error this is most probably related to the cont
 ```
 $ docker ps
 ```  
+## Running in production
 
-**NOTE - on first run:** The front end needs to be compiled - inside the container execute:
+**NOTE - on first run in production:** The front end needs to be compiled - inside the container execute:
 ```
 $ cd /home/local/app/public_src
 $ ./build_prod
@@ -57,6 +58,24 @@ There is no need to set up local configuration in the ./app/registry because the
 To start the application inside the container do:
 ```
 $ /home/local/app/bin/start_server
+```
+
+There is also support for [H2O](https://h2o.examp1e.net/) proxy. This can be used to offload the handling of the static files to H2O and also to improve the SSL performance.
+Swoole is slower than H2O when running with SSL. With having H2O running as proxy it handles the SSL requests and forwards plain requests to Swoole.
+To start the H2O proxy execute:
+```
+$ ./app/dockerfiles/h2o_proxy/start_h2o_proxy
+```
+It starts serving HTTPS requests on port 8082.
+
+In this setup all requests are served by H2O and only the /api/ requests are forwarded to Swoole.
+
+## Running in development mode
+
+To start the hot reload nodejs server:
+```
+$ cd ./app/public_src
+$ npm run start
 ```
 
 ## Direct application startup
@@ -101,6 +120,7 @@ Usually the only one needed to be installed is GuzabaPlatform with `composer req
 - [guzaba-platform/guzaba-platform](https://packagist.org/packages/guzaba-platform/guzaba-platform) - the [GuzabaPlatform](https://github.com/AzonMedia/guzaba-platform) itself
 - [guzaba-platform/guzaba-platform-installer](https://packagist.org/packages/guzaba-platform/guzaba-platform-installer) - the [installer of GuzbaPlatform](https://github.com/AzonMedia/guzaba-platform-installer). It is always installed with GuzabaPlatform. It has its package type set to "composer-plugin"
 - [guzaba-platform/guzaba-platform-docs](https://packagist.org/packages/guzaba-platform/guzaba-platform-docs) - [GuzabaPlatform documentation](https://github.com/AzonMedia/guzaba-platform-docs)
+- [guzaba-platform/guzaba-platform-tests](https://packagist.org/packages/guzaba-platform/guzaba-platform-tests) - [GuzabaPlatform tests](https://github.com/AzonMedia/guzaba-platform-tests)
 - [guzaba/guzaba2](https://packagist.org/packages/guzaba/guzaba2) - the [Guzaba 2 Framework](https://github.com/AzonMedia/guzaba2) that powers GuzabaPlatform
 
 #### List of available components
@@ -109,10 +129,13 @@ The following GuzabaPlatform components are available as packages through [Packa
 Currently these modules are functional but are lacking design.
 The GuzabaPlatform components have their package type set to "guzaba-platform-component" in composer.json and have their GitHub repository name starting with "component".
 - [guzaba-platform/assets](https://packagist.org/packages/guzaba-platform/assets) - [Digital assets management component](https://github.com/AzonMedia/component-assets)
-- [guzaba-platform/crud](https://packagist.org/packages/guzaba-platform/crud) - [CRUD operations and ACL permissions management](https://github.com/AzonMedia/component-crud)
-- [guzaba-platform/request-caching](https://packagist.org/packages/guzaba-platform/request-caching) - [Request caching component](https://github.com/AzonMedia/component-request-caching) (injects a new middleware)
 - [guzaba-platform/classes](https://packagist.org/packages/guzaba-platform/classes) - [Provides class ACL permissions management](https://github.com/AzonMedia/component-classes)
 - [guzaba-platform/controllers](https://packagist.org/packages/guzaba-platform/controllers) - [Provides controllers ACL permissions management](https://github.com/AzonMedia/component-controllers)
+- [guzaba-platform/crud](https://packagist.org/packages/guzaba-platform/crud) - [CRUD operations and ACL permissions management](https://github.com/AzonMedia/component-crud)
+- [guzaba-platform/navigation](https://packagist.org/packages/guzaba-platform/navigation) - [Managing navigation](https://github.com/AzonMedia/component-navigation)
+- [guzaba-platform/request-caching](https://packagist.org/packages/guzaba-platform/request-caching) - [Request caching component](https://github.com/AzonMedia/component-request-caching) (injects a new middleware)
+
+
 
 #### List of the components in development 
 The following modules can be installed with `composer require {module_name}`.
@@ -122,7 +145,7 @@ The following modules can be installed with `composer require {module_name}`.
 - [guzaba-platform/facebook-login]
 - [guzaba-platform/github-login]
 - [guzaba-platform/google-login]
-- [guzaba-platform/navigation] - Managing navigation
+
 - [guzaba-platform/twitter-login]
 - [guzaba-platform/payments-integrations](https://packagist.org/packages/guzaba-platform/payments-integrations) - [Payments integrations component](https://github.com/AzonMedia/component-payments-integrations)
 - [guzaba-platform/payments-integration-epaybg](https://packagist.org/packages/guzaba-platform/payments-integration-epaybg) - [Payments integration with Epay.bg component](https://github.com/AzonMedia/component-payments-integration-epaybg)
