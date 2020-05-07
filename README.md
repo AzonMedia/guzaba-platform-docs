@@ -14,6 +14,8 @@ Swoole allows for substantial [improvement in speed and concurrency](https://git
 #### Goals
 
 GuzabaPlatform aims to provide everything needed for building an application based on Swoole, be it a simple website, microservice or large scale application.
+It will also include multiple commonly used components so that one can start working on your application without writing commonly found functionality. 
+
 As being based on Swoole and Guzaba 2 framework it provides for:
 - in-memory caching (the persistent nature of Swoole allows for in-memory caching! No more shared memory, APCU, Redis...)
 - DB connections pool (Swoole executes in code in coroutines)
@@ -35,7 +37,7 @@ It will also provide some basic/common modules like:
 - integration with various payment providers
 - sign-in integrations with various providers
 
-For a complete list of the available modules please go to the [Packages](https://github.com/AzonMedia/guzaba-platform-docs#packages) section. 
+For a complete list of the available modules please go to the [Packages](https://github.com/AzonMedia/guzaba-platform-docs#packages) section.
 
 ## Deployment in containers
 
@@ -142,6 +144,8 @@ Change the settings in your ```app/registry/local.php``` so you can connect to t
 
 The GuzabaPlatform is comprised of multiple [Composer](https://getcomposer.org/) packages.
 Some of these packages are components for GuzabaPlatform and others are just dependencies and there are few main/special packages all of which you can find below.
+
+The packages that have frontend (Vue) have their frontend automatically installed too with the composer command (no need of any additional actions).
 
 #### Main packages
 
