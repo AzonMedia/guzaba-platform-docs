@@ -2,8 +2,40 @@
 
 ## Introduction
 
-[GuzabaPlatform](https://github.com/AzonMedia/guzaba-platform) is a plugin based system for building applications ranging from presentational websites to corporate applications.
-It is based on the [Guzaba 2 Framework](https://github.com/AzonMedia/guzaba2).
+[GuzabaPlatform](https://github.com/AzonMedia/guzaba-platform) is a plugin based system for building web applications ranging from presentational websites to corporate applications.
+It is based on the [Guzaba 2 Framework](https://github.com/AzonMedia/guzaba2), runs in [Swoole](https://www.swoole.co.uk/) and uses [Vue](https://vuejs.org/) for the frontend.
+
+Swoole allows for substantial [improvement in speed and concurrency](https://github.com/kenashkov/swoole-performance-tests) compared to the traditional PHP setups and Vue gives an application like user experience.
+
+**GuzabaPlatform is in very early stages of development. There are many unfinished parts, the APIs may change, there is no test coverage yet! The documentation is scarce.**
+
+**Please should you have any questions, found bugs, have feature requests or you cant get the current dev version to work please [raise an issue](https://github.com/AzonMedia/guzaba-platform/issues)!**
+
+#### Goals
+
+GuzabaPlatform aims to provide everything needed for building an application based on Swoole, be it a simple website, microservice or large scale application.
+As being based on Swoole and Guzaba 2 framework it provides for:
+- in-memory caching (the persistent nature of Swoole allows for in-memory caching! No more shared memory, APCU, Redis...)
+- DB connections pool (Swoole executes in code in coroutines)
+- simultaneous tasks execution - DB queries, API requests (again with coroutines)
+- ACL
+- MVC
+
+GuzabaPlatform also provides (as installable packages via composer) the fundamental components for an enterprise application like:
+- permissions management on objects & classes (static methods can have permissions too!)
+- User & Roles management
+- Application server monitoring
+- CMS
+- CRUD
+- Assets
+
+It will also provide some basic/common modules like:
+- catalog/shop
+- tags
+- integration with various payment providers
+- sign-in integrations with various providers
+
+For a complete list of the available modules please go to the [Packages](https://github.com/AzonMedia/guzaba-platform-docs#packages) section. 
 
 ## Deployment in containers
 
@@ -145,7 +177,6 @@ The following modules can be installed with `composer require {module_name}`.
 - [guzaba-platform/facebook-login]
 - [guzaba-platform/github-login]
 - [guzaba-platform/google-login]
-
 - [guzaba-platform/twitter-login]
 - [guzaba-platform/payments-integrations](https://packagist.org/packages/guzaba-platform/payments-integrations) - [Payments integrations component](https://github.com/AzonMedia/component-payments-integrations)
 - [guzaba-platform/payments-integration-epaybg](https://packagist.org/packages/guzaba-platform/payments-integration-epaybg) - [Payments integration with Epay.bg component](https://github.com/AzonMedia/component-payments-integration-epaybg)
@@ -171,3 +202,4 @@ These still can be installed individually with `composer require` but usually th
 - [Command Line Arguments](./cli-args)
 - [Development](./Development)
 - [Components](./Components)
+- [Console access](./ConsoleAccess)
