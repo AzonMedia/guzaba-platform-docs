@@ -17,11 +17,16 @@ GuzabaPlatform aims to provide everything needed for building an application bas
 It will also include multiple commonly used components so that one can start working on your application without writing commonly found functionality. 
 
 As being based on Swoole and Guzaba 2 framework it provides for:
-- in-memory caching (the persistent nature of Swoole allows for in-memory caching! No more shared memory, APCU, Redis...)
-- DB connections pool (Swoole executes in code in coroutines)
+- in-memory caching - the persistent nature of Swoole allows for in-memory caching! No more shared memory, APCU, Redis... **no more serialization and unserialization**!
+- DB connections pool - Swoole executes in code in coroutines and by having persistent memory model there is no need of connection initialization on every request
 - simultaneous tasks execution - DB queries, API requests (again with coroutines)
-- ACL
-- MVC
+- [SBRM](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) (Scope Based Resource Management) - provides for **automatic transaction rollback** thus avoiding the need to manually catch all cases where an exception can be thrown and manually invoke rollback(). The same is applied for the Connections management - these are **freed automatically** (taking into account the parent scopes!)
+- nested transactions (emulated with savepoints) - this allows for automatic partial (nested) rollback of the transaction
+- transaction events - callbacks can be added on SAVE, COMMIT, ROLLBACK. 
+- ACL (Access Control List)
+- RBAC (Role-Based Access Control - this is in progress currently)
+- MVC (Model-View-Controller)
+- facilitate IPC (Inter Process Communication) - Swoole has multiple workers and certain actions need to be executed on all of them
 
 GuzabaPlatform also provides (as installable packages via composer) the fundamental components for an enterprise application like:
 - permissions management on objects & classes (static methods can have permissions too!)
@@ -145,7 +150,7 @@ Change the settings in your ```app/registry/local.php``` so you can connect to t
 The GuzabaPlatform is comprised of multiple [Composer](https://getcomposer.org/) packages.
 Some of these packages are components for GuzabaPlatform and others are just dependencies and there are few main/special packages all of which you can find below.
 
-The packages that have frontend (Vue) have their frontend automatically installed too with the composer command (no need of any additional actions).
+The packages that have frontend (Vue) have their frontend automatically installed and integrated with the composer command (no need of any additional actions).
 
 #### Main packages
 
@@ -164,6 +169,7 @@ Usually the only one needed to be installed is GuzabaPlatform with `composer req
 The following GuzabaPlatform components are available as packages through [Packagist](https://packagist.org/) and can be installed with `composer require {module_name}`.
 Currently these modules are functional but are lacking design.
 The GuzabaPlatform components have their package type set to "guzaba-platform-component" in composer.json and have their GitHub repository name starting with "component".
+- [guzaba-platform/app-server-monitor](https://packagist.org/packages/guzaba-platform/app-server-monitor) - [Application server monitor](https://github.com/AzonMedia/component-app-server-monitor)
 - [guzaba-platform/assets](https://packagist.org/packages/guzaba-platform/assets) - [Digital assets management component](https://github.com/AzonMedia/component-assets)
 - [guzaba-platform/classes](https://packagist.org/packages/guzaba-platform/classes) - [Provides class ACL permissions management](https://github.com/AzonMedia/component-classes)
 - [guzaba-platform/controllers](https://packagist.org/packages/guzaba-platform/controllers) - [Provides controllers ACL permissions management](https://github.com/AzonMedia/component-controllers)
@@ -206,4 +212,4 @@ These still can be installed individually with `composer require` but usually th
 - [Command Line Arguments](./cli-args)
 - [Development](./Development)
 - [Components](./Components)
-- [Console access](./ConsoleAccess)
+- [Console access](./ConsoleAccess) (debug ports) - allows for commands and Controller actions to be executed over telnet connected to a specific worker.

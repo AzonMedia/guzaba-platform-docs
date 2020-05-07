@@ -8,7 +8,7 @@ Cli-args are used to overwrite the Application Swoole Server Options, such as **
 
 The console commands extends [Symfony Console Component](https://symfony.com/doc/current/components/console.html).
 
-The console application is created at the very beggining of start_server.php. The command name is **start** but is set as default command and may not be called. 
+The console application is created at the very beginning of start_server.php. The command name is **start** but is set as default command and may not be called. 
 
 ## Options
 
@@ -17,6 +17,10 @@ Options are not ordered (meaning you can specify them in any order) and are spec
 *  **document-root** - Add default path to project
   
   Example: --document-root=path/to/root
+
+* **disable-static-handler** Disables the serving of static files (html, css, images)
+
+  Example: --disable-static-handler
 
 *  **enable-ssl** - Enable ssl: sock_type = SWOOLE_SOCK_TCP | SWOOLE_SSL
 
