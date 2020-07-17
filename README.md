@@ -176,23 +176,25 @@ The GuzabaPlatform components have their package type set to "guzaba-platform-co
 - [guzaba-platform/crud](https://packagist.org/packages/guzaba-platform/crud) - [CRUD operations and ACL permissions management](https://github.com/AzonMedia/component-crud)
 - [guzaba-platform/navigation](https://packagist.org/packages/guzaba-platform/navigation) - [Managing navigation](https://github.com/AzonMedia/component-navigation)
 - [guzaba-platform/request-caching](https://packagist.org/packages/guzaba-platform/request-caching) - [Request caching component](https://github.com/AzonMedia/component-request-caching) (injects a new middleware)
-
-
+- [guzaba-platform/roles](https://packagist.org/packages/guzaba-platform/roles) - [Roles management component](https://github.com/AzonMedia/component-roles)
+- [guzaba-platform/users](https://packagist.org/packages/guzaba-platform/users) - [Users management component](https://github.com/AzonMedia/component-users)
 
 #### List of the components in development 
 The following modules can be installed with `composer require {module_name}`.
 - [guzaba-platform/cart](https://packagist.org/packages/guzaba-platform/cart) - [Shopping cart component](https://github.com/AzonMedia/component-cart)
 - [guzaba-platform/catalog](https://packagist.org/packages/guzaba-platform/catalog) - [Catalog component](https://github.com/AzonMedia/component-catalog) (can be used as products catalog/store front)
 - [guzaba-platform/cms](https://packagist.org/packages/guzaba-platform/cms) - [CMS component](https://github.com/AzonMedia/component-cms)
+- [guzaba-platform/payments-integrations](https://packagist.org/packages/guzaba-platform/payments-integrations) - [Payments integrations component](https://github.com/AzonMedia/component-payments-integrations)
+- [guzaba-platform/payments-integration-epaybg](https://packagist.org/packages/guzaba-platform/payments-integration-epaybg) - [Payments integration with Epay.bg component](https://github.com/AzonMedia/component-payments-integration-epaybg)
+- [guzaba-platform/tags](https://packagist.org/packages/guzaba-platform/tags) - [Tags component](https://github.com/AzonMedia/component-tags)
+
 - [guzaba-platform/facebook-login]
 - [guzaba-platform/github-login]
 - [guzaba-platform/google-login]
 - [guzaba-platform/twitter-login]
-- [guzaba-platform/payments-integrations](https://packagist.org/packages/guzaba-platform/payments-integrations) - [Payments integrations component](https://github.com/AzonMedia/component-payments-integrations)
-- [guzaba-platform/payments-integration-epaybg](https://packagist.org/packages/guzaba-platform/payments-integration-epaybg) - [Payments integration with Epay.bg component](https://github.com/AzonMedia/component-payments-integration-epaybg)
-- [guzaba-platform/roles](https://packagist.org/packages/guzaba-platform/roles) - [Roles management component](https://github.com/AzonMedia/component-roles)
-- [guzaba-platform/tags](https://packagist.org/packages/guzaba-platform/tags) - [Tags component](https://github.com/AzonMedia/component-tags)
-- [guzaba-platform/users](https://packagist.org/packages/guzaba-platform/users) - [Users management component](https://github.com/AzonMedia/component-users)
+- [guzaba-platform/logs-browser]
+- [guzaba-platform/object-aliases-manager]
+
 
 #### List of modules
 
