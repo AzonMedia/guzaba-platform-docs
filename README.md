@@ -187,7 +187,6 @@ The following modules can be installed with `composer require {module_name}`.
 - [guzaba-platform/payments-integrations](https://packagist.org/packages/guzaba-platform/payments-integrations) - [Payments integrations component](https://github.com/AzonMedia/component-payments-integrations)
 - [guzaba-platform/payments-integration-epaybg](https://packagist.org/packages/guzaba-platform/payments-integration-epaybg) - [Payments integration with Epay.bg component](https://github.com/AzonMedia/component-payments-integration-epaybg)
 - [guzaba-platform/tags](https://packagist.org/packages/guzaba-platform/tags) - [Tags component](https://github.com/AzonMedia/component-tags)
-
 - [guzaba-platform/facebook-login]
 - [guzaba-platform/github-login]
 - [guzaba-platform/google-login]
