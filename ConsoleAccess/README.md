@@ -1,7 +1,7 @@
 # Console Access and debug ports
 
 ## Basics
-The [command line option](../cli-args/README.md) --enable-debug-ports enables a port on each worker to which a telnet connection can be established.
+The [command line option](../cli-args/README.md) **--enable-debug-ports** enables a port on each worker to which a telnet connection can be established.
 The ports default configuration for the debug ports is to start of base port 10000 for Worker 0 and go up for every worker.
 So if there are 8 workers in total (including task workers) the debug ports will be 10000 through 10007.
 When the debug ports are enabled the following line will be printed on application startup:
@@ -33,3 +33,22 @@ TW0>>>
 ```
 
 ## Executing commands
+
+Help is available with:
+```
+W0>>> help
+```
+And for specific topic with:
+```
+W0>>> help TOPIC
+```
+For example
+
+## Executing controllers
+
+The "execute" command provided by the ControllerExecutor module allows for execution of any controller.
+```
+W0>>> help ControllerExecutor
+W0>>> help execute
+W0>>> execute GET /api/request-test
+```

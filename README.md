@@ -22,7 +22,8 @@ As being based on Swoole and Guzaba 2 framework it provides for:
 - simultaneous tasks execution - DB queries, API requests (again with coroutines)
 - [SBRM](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) (Scope Based Resource Management) - provides for **automatic transaction rollback** thus avoiding the need to manually catch all cases where an exception can be thrown and manually invoke rollback(). The same is applied for the Connections management - these are **freed automatically** (taking into account the parent scopes!)
 - nested transactions (emulated with savepoints) - this allows for automatic partial (nested) rollback of the transaction
-- transaction events - callbacks can be added on SAVE, COMMIT, ROLLBACK. 
+- transaction events - callbacks can be added on SAVE, COMMIT, ROLLBACK.
+- ActiveRecord objects rollback on transaction rollback 
 - ACL (Access Control List)
 - RBAC (Role-Based Access Control - this is in progress currently)
 - MVC (Model-View-Controller)
@@ -30,8 +31,9 @@ As being based on Swoole and Guzaba 2 framework it provides for:
 
 GuzabaPlatform also provides (as installable packages via composer) the fundamental components for an enterprise application like:
 - permissions management on objects & classes (static methods can have permissions too!)
-- User & Roles management
-- Application server monitoring
+- roles hierarchy model
+- Users & Roles management
+- Application server monitoring and management
 - CMS
 - CRUD
 - Assets
@@ -139,6 +141,13 @@ $ app/public_src/build_prod
 
 Change the settings in your ```app/registry/local.php``` so you can connect to the MySQL and to the Redis server.
 
+## Running tests
+
+To run all tests from all GuzabaPlatform packages run:
+```
+$ app/bin/run_all_tests
+```
+
 ## Current development status
 - the permissions are working but currently not configured or enforced
 - login needs improvements & additional security
@@ -194,6 +203,13 @@ The following modules can be installed with `composer require {module_name}`.
 - [guzaba-platform/logs-browser]
 - [guzaba-platform/object-aliases-manager]
 
+#### List of testing components
+The tests are put in separate components by following the pattern VENDOR/COMPONENT-tests. By default every component installs its testing component (if there is such).
+- [guzaba-platform/guzaba-platform-tests]
+- [guzaba-platform/cms-tests]
+
+
+
 
 #### List of modules
 
@@ -209,8 +225,15 @@ These still can be installed individually with `composer require` but usually th
 
 ## Basic Topics
 
+- [Scripts (./app/bin)](./Scripts)
+- [Startup](./Startup)
 - [Routing](./Routing)
 - [Command Line Arguments](./cli-args)
 - [Development](./Development)
 - [Components](./Components)
 - [Console access](./ConsoleAccess) (debug ports) - allows for commands and Controller actions to be executed over telnet connected to a specific worker.
+
+
+## Component Development Topics
+- [New Component]
+- [New testing component]
